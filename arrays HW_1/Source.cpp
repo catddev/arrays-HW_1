@@ -35,7 +35,7 @@ start:
 		cout << "Ввод массива целых чисел. После ввода каждого числа нажмите <Enter>" << endl;
 		for (int i = 0; i < 5; i++)
 		{
-			cout << "a" << "[" << i << "]" << " -> ";
+			cout << "a[" << i << "] -> ";
 			cin >> a[i];
 			if (a[i] != 0) k++;
 		}
@@ -66,26 +66,53 @@ start:
 		const int n = 10;
 		int a[n];
 		cout << "Введите в одной строке элементы массива (10 целых чисел) и нажмите <Enter>" << endl;
-		int k = 0;
-		int sum = 0;
+		double k = 0;
+		double sum = 0;
 
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i < 10; i++)
 		{
 			cin >> a[i];
 			if (a[i] != 0)
 			{
-				sum = sum + a[i];
+				sum += a[i];
 				k++;
 			}
 		}
 		cout << "Сумма элементов массива: " << sum << endl;
 		cout << "Количество ненулевых элементов: " << k << endl;
-		cout << "Среднее арифметическое ненулевых элементов: " << double(sum / k) << endl << endl;
+		cout << "Среднее арифметическое ненулевых элементов: " << sum / k << endl << endl;
 	}
 	break;
 	case 4:
 	{
+		// 4. Написать программу, которая вычисляет среднее арифметическое элементов массива
+		// без учета минимального и максимального элементов массива.
+		// Ниже приведен рекомендуемый вид экрана во время работы программы
 
+		const int n = 10;
+		int a[n];
+		cout << "Введите массив(10 целых чисел в одной строке) ";
+		int k = 0;
+		double sum = 0;
+		int min_v = INT_MAX;
+		int max_v = INT_MIN;
+
+		for (int i = 0; i < 10; i++)
+		{
+			cin >> a[i];
+			if (a[i] < min_v) min_v = a[i];
+			else if (a[i] > max_v) max_v = a[i];
+
+			if (a[i] > min_v && a[i] < max_v)
+			{
+				sum += a[i];
+				k++;
+			}
+		}
+		cout << sum << " " << k << endl;
+		cout << "Минимальный элемент: " << min_v << endl;
+		cout << "Максимальный элемент: " << max_v << endl;
+		cout << "Среднее арифметическое без учета min и max значений: " << double(sum / k) << endl << endl;
 	}
 	break;
 	case 5:
