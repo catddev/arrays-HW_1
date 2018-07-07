@@ -162,7 +162,6 @@ start:
 			cin >> a[i];
 			if (a[i] == x) count++;
 		}
-
 		cout << "число встречается в массиве " << count << " раз/-a" << endl << endl;
 	}
 	break;
