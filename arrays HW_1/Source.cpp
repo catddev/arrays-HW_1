@@ -131,14 +131,10 @@ start:
 		cout << "Введите число:" << endl;
 		cin >> x;
 
-		cout << "Введите значения элементов массива:" << endl;
+		cout << "Введите значения элементов массива, после каждого нажимая <Enter> :" << endl;
 		for (int i = 0; i < n; i++)
 		{
 			cin >> a[i];
-		}
-
-		for (int i = 0; i < n; i++)
-		{
 			if (a[i] == x)
 			{
 				cout << "число находится в массиве" << endl << endl;
@@ -164,12 +160,9 @@ start:
 		for (int i = 0; i < n; i++)
 		{
 			cin >> a[i];
-		}
-
-		for (int i = 0; i < n; i++)
-		{
 			if (a[i] == x) count++;
 		}
+
 		cout << "число встречается в массиве " << count << " раз/-a" << endl << endl;
 	}
 	break;
@@ -220,11 +213,9 @@ start:
 		{
 			i++;
 			cin >> a[i];
-		}
-		for (int i = 0; i < n; i++)
-		{
 			sum += a[i];
 		}
+	
 		for (int i = 0; i < n; i++)
 		{
 			if (a[i] > double(sum / n)) count++;
@@ -244,24 +235,21 @@ start:
 
 		cout << "Введите исходные данные:" << endl;
 
-		for (int i = 5; i > 1; i--)
+		for (int i = 0, int j=5; i < 4; i++, j-=2)
 		{
-			cout << "оценок " << i << " -> ";
-			cin >> a[i-2];
-		}
-		cout << endl;
-
-		for (int i = 0; i < 4; i++)
+			cout << "оценок " << j << " -> ";
+			cin >> a[i];
 			sum += a[i];
-		
-		cout << "Результаты экзамена:" << endl;
-		for (int i = 5; i > 1; i--)
-		{
-				percent = a[i-2] / sum * 100;
-				cout << "оценок " << i << " -> " << percent << "%" << endl;
 		}
 		cout << endl;
 
+		cout << "Результаты экзамена:" << endl;
+		for (int i = 0, int j = 5; i < 4; i++, j -= 2)
+		{
+			percent = a[i] / sum * 100;
+			cout << "оценок " << j << " -> " << percent << "%" << endl;
+		}
+		cout << endl;
 	}
 	break;
 	case 10:
@@ -279,10 +267,6 @@ start:
 		for (int i = 0; i < n; i++)
 		{
 			cin >> a[i];
-		}
-
-		for (int i = 0; i < n; i++)
-		{
 			if (a[i] == K) count++;
 		}
 		cout << "символ " << K << " встречается в массиве " << count << " раз/-a" << endl << endl;
@@ -334,7 +318,7 @@ start:
 			cin >> a[i];
 		}
 
-		double min_v = a[1];
+		double min_v = INT_MAX;
 		int element1;
 		int element2;
 
