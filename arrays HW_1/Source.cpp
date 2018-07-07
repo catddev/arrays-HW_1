@@ -128,7 +128,7 @@ start:
 		int a[n];
 
 		int x;
-		cout << "Введите число:" << endl;
+		cout << "Введите число для поиска в массиве:" << endl;
 		cin >> x;
 
 		cout << "Введите значения элементов массива, после каждого нажимая <Enter> :" << endl;
@@ -153,7 +153,7 @@ start:
 		int a[n];
 		int count = 0;
 		int x;
-		cout << "Введите число:" << endl;
+		cout << "Введите число для поиска в массиве:" << endl;
 		cin >> x;
 
 		cout << "Введите значения элементов массива:" << endl;
@@ -234,7 +234,8 @@ start:
 
 		cout << "Введите исходные данные:" << endl;
 
-		for (int i = 0, int j=5; i < 4; i++, j-=2)
+		int i, j;
+		for (i = 0, j=5; i < 4; i++, j-=2)
 		{
 			cout << "оценок " << j << " -> ";
 			cin >> a[i];
@@ -243,7 +244,7 @@ start:
 		cout << endl;
 
 		cout << "Результаты экзамена:" << endl;
-		for (int i = 0, int j = 5; i < 4; i++, j -= 2)
+		for (i = 0, j = 5; i < 4; i++, j -= 2)
 		{
 			percent = a[i] / sum * 100;
 			cout << "оценок " << j << " -> " << percent << "%" << endl;
