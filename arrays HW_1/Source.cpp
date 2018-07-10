@@ -204,17 +204,17 @@ start:
 		int a[n];
 		int count = 0;
 		double sum = 0;
-		int i = -1;
+		int i = 0;
 
 		cout << "Введите рост (см) 5 учеников и нажмите Enter" << endl;
 		cout << "Для завершения введите 0 и нажмите Enter" << endl;
-		while (a[i]!=0)
+		while (a[i] != 0 && i<n)
 		{
-			i++;
 			cin >> a[i];
 			sum += a[i];
+			i++;
 		}
-	
+
 		for (int i = 0; i < n; i++)
 		{
 			if (a[i] > double(sum / n)) count++;
@@ -279,13 +279,13 @@ start:
 
 		const int n = 10;
 		char a[n];
-		char C='C';
+		char C = 'C';
 
 		cout << "Введите 10 символов массива:" << endl;
 		cout << "Для завершения введите 0 и нажмите Enter" << endl;
 
 		int j = 0;
-		while (j<10)
+		while (a[j] != 0 && j<10)
 		{
 			j++;
 			cin >> a[j];
@@ -318,21 +318,21 @@ start:
 			cin >> a[i];
 		}
 
-		double min_v = INT_MAX;
-		int element1;
-		int element2;
+		double min_v = a[1];
+		int i1;
+		int i2;
 
-		for (int i = 1; i <= n/2; i++)
+		for (int i = 1; i <= n / 2; i++)
 		{
 			if (a[i] * a[i + n / 2] < min_v)
 			{
 				min_v = a[i] * a[i + n / 2];
-				element1 = i;
-				element2 = i + n / 2;
-			}		
+				i1 = i;
+				i2 = i + n / 2;
+			}
 		}
 		cout << "минимальное значение = " << min_v;
-		cout << " (произведение пары элементов a[" << element1 << "] и a[" << element2 << "] )" << endl << endl;
+		cout << " (произведение пары элементов a[" << i1 << "] и a[" << i2 << "] )" << endl << endl;
 	}
 	break;
 	default:
