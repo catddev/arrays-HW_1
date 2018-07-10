@@ -235,7 +235,7 @@ start:
 		cout << "Введите исходные данные:" << endl;
 
 		int i, j;
-		for (i = 0, j=5; i < 4; i++, j-=2)
+		for (i = 0, j=5; i < 4; i++, j--)
 		{
 			cout << "оценок " << j << " -> ";
 			cin >> a[i];
@@ -244,7 +244,7 @@ start:
 		cout << endl;
 
 		cout << "Результаты экзамена:" << endl;
-		for (i = 0, j = 5; i < 4; i++, j -= 2)
+		for (i = 0, j = 5; i < 4; i++, j --)
 		{
 			percent = a[i] / sum * 100;
 			cout << "оценок " << j << " -> " << percent << "%" << endl;
